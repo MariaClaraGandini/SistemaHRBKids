@@ -10,14 +10,14 @@
 
     <title>HRB Kids | Cadastro </title>
 </head>
-<body class="bg-gray-50	">
+<body class="bg-gray-50 dark:bg-gray-800">
     <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
 
 
     <!-- NAVBAR  -->
 
-    <nav class="bg-white border-gray-300 px-2 sm:px-4  rounded dark:bg-gray-900">
+    <nav class="bg-white border-gray-300 px-2 sm:px-4  rounded dark:bg-gray-600">
       <div class="flex flex-wrap w-full ml-4 h-15 justify-between tamanho">
         <div class="flex">
         <a href="https://flowbite.com/" class="flex items-start">
@@ -93,31 +93,33 @@
 </div>
 
 <div class="bg-white m-5">
-<h1 class="flex pl-4 pt-5 text-5xl font-semibold">Clientes</h1>
-  
-<!-- forms -->
+  <div class="flex justify-between items-end responsividade">
+  <h1 class="flex pl-4 pt-5 text-5xl font-semibold ">Clientes</h1>
+</div>
+
+ <!-- forms -->
 <form>
     <h2 class="flex pl-4 pt-5 text-xl text-gray-400">Dados Cadastrais</h2>
     <div class="pl-4 pt-5 pr-4 grid gap-6 mb-6 md:grid-cols-3">
         <div>
             <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Nome Completo</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name" required>
+            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: Maria Pereira" required>
         </div>
         <div>
             <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">CPF</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="XX. XXX. XXX/0001-XX" required>
+            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="000.000.000-00" required>
         </div>
         <div class="pr-2">
             <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">E-mail</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Fantasy Name" required>
+            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="mariapereira@hotmail.com" required>
         </div>
         <div>
             <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Telefone</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="XX. XXX. XXX/0001-XX" required>
+            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(00) 00000-0000" required>
         </div>
         <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Telefone</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="XX. XXX. XXX/0001-XX" required>
+            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Celular</label>
+            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(00) 00000-0000" required>
         </div>
         <div class="pr-2">
             <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Conheceu a loja por</label>
@@ -131,7 +133,7 @@
         </div>
     </div>
     <h2 class="flex pl-5 pt-5 text-xl text-gray-400">Endereço</h2>
-    <div class="pl-5 pt-5 pr-5 grid gap-6 mb-6 md:grid-cols-3">
+    <div class="pl-5 pt-5 pr-5 grid gap-6 mb-6 md:grid-cols-3 mr-4">
                   <div >
                 <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">CEP</label>
                   <div class="relative w-full">
@@ -164,12 +166,14 @@
             <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Bairro</label>
             <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="District Name" required>
         </div>
-        
+
+        <div class="flex pt-5">
+          <button class=" flex-wrap block mb-2 mt-1 mr-3 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
+
+          <button class=" flex-wrap block bg-purple-400 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
+      </div>
     </div>
 </form>
 </div>
-<style>
-  
-</style>
 </body>
 </html>

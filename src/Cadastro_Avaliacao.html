@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/path/to/cdn/jquery.min.js"></script>
+    <script src="/path/to/cloneData.js"></script>
 
     <title>HRB Kids | Cadastro </title>
 </head>
 <body class="bg-gray-50	">
-    <script src="../path/to/flowbite/dist/flowbite.js"></script>
-
 
 
     <!-- NAVBAR  -->
@@ -91,79 +92,154 @@
       </li>
     </ol>
 </div>
-
-<div class="bg-white m-5">
+<div class="bg-white m-5 pb-5">
   <div class="flex justify-between items-end responsividade">
-  <h1 class="flex pl-4 pt-5 text-4xl font-semibold ">Produto</h1>
+  <h3 class="flex pl-4 pt-5 text-4xl font-semibold ">Avaliação
+    <span id="valorsacola"></span>
+  </h3>
+
 </div>
 
  <!-- forms -->
 <form>
-    <h2 class="flex pl-4 pt-5 text-xl text-gray-400">Dados Cadastrais</h2>
     <div class="pl-4 pt-5 pr-4 grid gap-6 mb-6 md:grid-cols-3">
         <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Descrição</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: Body" required>
+            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Nome do Cliente</label>
+            <input type="text" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-blue-greenblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Ex: Body" required>
         </div>
-        <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Código (SKU)</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: 0000000001" required>
-        </div>
-        <div class="pr-2">
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Preço de Venda (R$)</label>
-            <input type="number" step="0.1"id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: 199,50" required>
-        </div>
+</div>
+<div>
+<h2 class="flex pl-4 text-xl text-gray-400">Peças aprovadas</h2>
+</div>
+<table class="ml-4 ">
+  <div>
+    <thead>
+      <th class="text-sm font-medium text-black dark:text-gray-300">Descrição</th>
+      <th class="text-sm font-medium text-black dark:text-gray-300">Quantidade</th>
+      <th class="text-sm font-medium text-black dark:text-gray-300">Preço Custo UN. (R$)</th>
+      <th class="text-sm font-medium text-black dark:text-gray-300">Preço Venda UN. (R$)</th>
     </div>
-    <h2 class="flex pl-5  ml-5 text-xl text-gray-400">Estoque</h2>
-    <label class="block mb-2 pl-5 text-sm font-medium text-black dark:text-gray-300 mt-4">Estoque</label>
-      
-    
-    <input type="number" step="1" class="block p-2.5 ml-4 input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Ex:1" required>
-    <h2 class="flex pl-5 pt-5 text-xl text-gray-400">Dados Fiscais</h2>
-    <div class="pl-5 pt-5 pr-5 grid gap-6 mb-6 md:grid-cols-3 mr-4">
-                  <div >
-                <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Origem</label>
-                <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City Name" required>
-
-              </div>
-            <div>
-                <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">NCM</label>
-                <div class="relative w-full">
-                  <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="CEP" required>
-                  <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-gray-900 rounded-r-lg  hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-            </div>
-            </div>
-                <div>
-                <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">CEST</label>
-                <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City Name" required>
-            </div>
-        <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Rua</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Street Name" required>
-        </div>
-        <div >
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Número</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="1234" required>
-        </div>
-
-        <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Bairro</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="District Name" required>
-        </div>
-
-        <div class="flex pt-5">
-          <button class=" flex-wrap block mb-2 mt-1 mr-3 p-2.5 z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
-
-          <button class="">Cadastrar</button>
-      </div>
-    </div>
-    </div>
+    </thead>
+    <tbody>
+      <tr id="1">
+         <div class="flex rounded-l-lg inserir">
+              <td>
+                <input type="text" id="descricao" class=" border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-green-500 focus:border-green-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Ex: Body" required>
+              </td>
+              <td>
+                <input type="number" min="1" id="quantidade" class="border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Ex: 1" required>
+              </td>
+              <td>
+                <input type="number" id="valorcusto"  class= "border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="8,00" required>
+              </td>
+                <td>
+                <input type="text" id="valorvenda" class="border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-blue-greenblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="8,00" required>
+                </td>
+                <td>
+                  
+                  <button onclick="Delete()" type="text" class="remove-item border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green500">
+                  <svg  class="w-6 h-5"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>
+                </button>
+                  </td>
+                  </div>
+        </tr>
+      </tbody>
+</table>
+<script>
+  function CalculaCusto(){
+      let valorvenda = ParseFloat(valorvenda.value);
+      let valorcusto = 0.15 * valorvenda ;
+      let valorcredito = valor ;
+      result.innerHTML += `<div class="flex m-5 p-1 rounded-lg bg-gray-100 ">
+  <p class="font-medium">Valor de Custo (R$): ${valorcusto}</p>
+  <p class="font-medium border-l-2 border-gray-200">Valor do Crédito (R$):</p>
+  <p class=" font-medium border-l-2  ">Lucro Líquido (R$):</p>
+</div> `
+  }
+</script>
+<div class="ml-4 font-semibold">
+  <a onclick="validar()" id="add-more" class="position color mb-5">+ Adicionar Item</a></div>
 </form>
+<div class="flex flex-wrap ml-3 ">
+<button class="ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200  block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg  border border border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotao">Cancelar</button>
+<button class="ml-1 mt-5 cadastrarbotao block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg   border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotao">Cadastrar</button>
+</div>
 </div>
 <style>
-  .input{
-    width:31%;
+  
+  table{
+    margin-top:2%;
   }
+  th{
+    text-align:start;
+    margin-left: 7%;
+  }
+  .color{
+    color:#0bde97;
+  }
+  a:hover{
+    color:#0bc889;
+  }
+  .cadastrarbotao{
+      width:13em;
+      margin-top: 2%;
+      background-color: #0bde97;
+      color: white;
+      
+    }
+    .cadastrarbotao:hover{
+      background-color: #0bc889;
+    }
+
+.cancelarbotao{
+  width:13em;
+  margin-top: 2%;
+}
 </style>
+<script src="../path/to/flowbite/dist/flowbite.js"></script>
+
+<script>
+  var custototal = 0;
+
+  function validar(){
+    let descricao = document.getElementById("descricao");
+    let quantidade = document.getElementById("quantidade");
+    let valorcusto = document.getElementById("valorcusto")
+    let valorvenda = document.getElementById("valorvenda");
+    let valorsacola = document.getElementById("valorsacola")
+    ;
+
+
+    if(descricao.value==''){
+      alert("esse camp não pode ficar vazio")
+    } else
+    if(quantidade.value<=0){
+      alert("esse camp não pode ficar vazio")
+    }else
+    if(valorvenda.value<=0){
+      alert("esse camp não pode ficar vazio")
+    } else{
+
+    
+
+    valorcusto.value = ((valorvenda.value * quantidade.value) * 0.15) 
+    custototal+= parseFloat(valorcusto.value)
+   descricao.removeAttribute('id');
+   quantidade.removeAttribute('id');
+    valorcusto.removeAttribute('id');
+    valorvenda.removeAttribute('id');
+
+    
+    Inserir()
+    console.log(custototal);
+    valorsacola.innerHTML = custototal;
+  }}
+  function Inserir(){
+    let div= $("<tr><div class='flex rounded-l-lg inserir'><td><input type='text' id='descricao' class='border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-green-500 focus:border-green-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><input type='text' id='quantidade' class='border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required> </td><td><input type='text' id='valorcusto' class= 'border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><input type='text' id='valorvenda' class='border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-blue-greenblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><button onclick='Delete()' type='text' class='border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green500'><svg  class='w-6 h-5'id='Camada_1' data-name='Camada 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 18'><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class='cls-1' d='M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z' transform='translate(-4 -3)'/></svg></button></td><tr>")
+   $("tbody").append(div);};
+   
+
+</script>
+
 </body>
 </html>

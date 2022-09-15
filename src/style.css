@@ -1,0 +1,19 @@
+.cadastrarbotao{
+    width:13em;
+    margin-top: 2%;
+    background-color: #0bde97;
+    color: white;
+    
+  }
+  .cadastrarbotao:hover{
+    background-color: #0bc889;
+  }
+
+  .negative{
+    border-color: red;
+  border: 10%;
+}
+.cancelarbotao{
+    width:13em;
+    margin-top: 2%;
+  }

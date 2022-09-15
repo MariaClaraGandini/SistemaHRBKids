@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-
+    <link rel="stylesheet" href="dist/simple-notify.min.css" />
+    <script src="dist/simple-notify.min.js"></script>
     <title>HRB Kids | Cadastro </title>
 </head>
 <body class="bg-gray-50 dark:bg-gray-800">
@@ -120,6 +121,7 @@
                 <th scope="col" class="py-3 px-6 font-semibold">
                   Editar
               </th>
+             
             </tr>
         </thead>
         <tbody>
@@ -137,10 +139,14 @@
                     R$8,00
                 </td>
                 <td class="py-4 px-6">
-                  <div>
-                    <button><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg></button>
-                <div>
+                  <a class="text-blue-500">Editar</a> 
+                  </button>
               </td>
+                <td class="py-4 px-6">
+                  <button onclick="Delete()" type="text" class="remove-item border-0 focus:ring-red-500 focus:border-red-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-red-500">
+                    <svg  class="w-6 h-5"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>
+                  </button>
+                  </td>
             </tr>
             <tr class="bg-white border-b dark:bg-gray-700 dark:border-gray-700">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -218,6 +224,7 @@
     }
 </style>
 <script>
+  // TEMA DARK
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -263,6 +270,13 @@ themeToggleBtn.addEventListener('click', function() {
             localStorage.setItem('color-theme', 'dark');
         }
     }
+
+    /////// Validações do campo
+
+    function validacao(){
+      
+    }
+
     
 });
 

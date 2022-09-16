@@ -151,12 +151,16 @@
  <div id="div" class="ml-4 font-semibold">
   <a onclick="validar()" id="add-more" class="position color mb-5">+ Adicionar Item</a></div>
   <div class="flex">
-  <p>Valor total:</p>
+  <p>Valor Custo:</p>
   <div id="valorsacola"></div>
 </div>
 <div class="flex">
   <p>Quantidade:</p>
   <div id="quantidadetotal"></div>
+</div>
+<div class="flex">
+  <p>Lucro bruto:</p>
+  <div id="vendatotal"></div>
 </div>
 </form>
 <div>
@@ -266,6 +270,7 @@
     console.log(custototal);
     valorsacola.innerHTML = custototal;
     quantidadetotal.innerHTML = estoquetotal;
+    vendatotal.innerHTML = lucrobruto;
     
 
     

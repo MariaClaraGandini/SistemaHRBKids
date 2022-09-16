@@ -150,7 +150,14 @@
 </table>
  <div id="div" class="ml-4 font-semibold">
   <a onclick="validar()" id="add-more" class="position color mb-5">+ Adicionar Item</a></div>
+  <div class="flex">
+  <p>Valor total:</p>
   <div id="valorsacola"></div>
+</div>
+<div class="flex">
+  <p>Quantidade:</p>
+  <div id="quantidadetotal"></div>
+</div>
 </form>
 <div>
   <div class=' m-4 mt-4 p-1 rounded-lg'>
@@ -219,13 +226,17 @@
 <script src="../path/to/flowbite/dist/flowbite.js"></script>
 <script>
   var custototal = 0;
+  var estoquetotal=0;
+  var lucrobruto = 0;
 
   function validar(){
     let descricao = document.getElementById("descricao");
     let quantidade = document.getElementById("quantidade");
     let valorcusto = document.getElementById("valorcusto")
     let valorvenda = document.getElementById("valorvenda");
-    let valorsacola = document.getElementById("valorsacola")
+    let valorsacola = document.getElementById("valorsacola");
+    let quantidadetotal =document.getElementById("quantidadetotal")
+    let vendatotal = document.getElementById("vendatotal")
     ;
 
 
@@ -243,6 +254,8 @@
 
     valorcusto.value = ((valorvenda.value * quantidade.value) * 0.15) 
     custototal+= parseFloat(valorcusto.value)
+    estoquetotal+=parseFloat(quantidade.value)
+    lucrobruto +=parseFloat(valorvenda.value)
    descricao.removeAttribute('id');
    quantidade.removeAttribute('id');
     valorcusto.removeAttribute('id');
@@ -252,6 +265,8 @@
     Inserir()
     console.log(custototal);
     valorsacola.innerHTML = custototal;
+    quantidadetotal.innerHTML = estoquetotal;
+    
 
     
   }

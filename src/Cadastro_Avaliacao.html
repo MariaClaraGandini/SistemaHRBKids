@@ -125,12 +125,12 @@
     </thead>
     <tbody>
       <tr id="1">
-         <div class="flex rounded-l-lg inserir">
+         <div class="flex rounded-l-lg inserir ">
               <td>
-                <input type="text" id="descricao" class=" border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-gray-400 focus:border-gray-200 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="Ex: Body" required>
+                <input type="text" id="descricao" class=" border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-red-500 focus:border-red-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="Ex: Body" required>
               </td>
               <td>
-                <input type="number" min="1" id="quantidade" class="border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="Ex: 1" required>
+                <input type="number" min="1" step=".01" id="quantidade" class="border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="Ex: 1" required>
               </td>
               <td>
                 <input disabled="disabled" type="number" id="valorcusto"  class= "border-1 border-r-0 bg-gray-100 border-gray-300 text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500">
@@ -139,8 +139,7 @@
                 <input type="text" id="valorvenda" class="border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200nblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="8,00" required>
                 </td>
                 <td>
-                  
-                  <button onclick="Delete()" type="text" class="remove-item border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n500">
+                  <button onclick="Delete()" type="text" class="remove-item border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-blue-500 block mr-5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n500 r-5">
                   <svg  class="w-6 h-5"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>
                 </button>
                   </td>
@@ -150,33 +149,31 @@
 </table>
  <div id="div" class="ml-4 font-semibold">
   <a onclick="validar()" id="add-more" class="position color mb-5">+ Adicionar Item</a></div>
+  <div class="m-5 dark:text-white">
+    <div class="flex">
+      <p  class="font-semibold">Quantidade de peças:</p>
+      <div id="quantidadetotal" class="ml-1">0</div>
+    </div>
+    <div class="flex">
+      <p class="font-semibold">Lucro Bruto:<p class="ml-1">R$</p></p>
+      <div id="vendatotal" >0</div>
+    </div>
   <div class="flex">
-  <p>Valor Custo:</p>
-  <div id="valorsacola"></div>
+  <p  class="font-semibold">Crédito brechozinho:<p class="ml-1 text-red-500">R$</p></p>
+  <div id="valorsacola" class="flex-wrap text-red-500">0</div>
 </div>
+
 <div class="flex">
-  <p>Quantidade:</p>
-  <div id="quantidadetotal"></div>
+  <p class="font-semibold">Lucro Líquido: <p class="ml-1 text-green-400">R$</p></p>
+  <div class="text-green-400" id="lucroliquido">0</div>
 </div>
-<div class="flex">
-  <p>Lucro bruto:</p>
-  <div id="vendatotal"></div>
-</div>
-<div class="flex">
-  <p>Lucro liquido:</p>
-  <div id="lucroliquido"></div>
 </div>
 </form>
 <div>
-  <div class=' m-4 mt-4 p-1 rounded-lg'>
-    <p class='font-medium'>Valor de Custo: <span id="valorvenda"></span></p>
-  <!-- </div><p class='font-medium'>Valor de Custo: <span class='flex' id='valorcusto'>Valor de</span> </p>"
-  <span id="valorsacola">:</span>
-  <span id="valorcusto"></span> -->
-</div>
+ 
 <div class="flex flex-wrap ml-3 ">
 <button class="ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200  block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg  border border border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:bg-green-700">Cancelar</button>
-<button class="ml-1 mt-5 cadastrarbotao block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg   border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotaodark">Cadastrar</button>
+<button onclick="validar()" class="ml-1 mt-5 cadastrarbotao block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg   border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotaodark">Cadastrar</button>
 </div>
 </div>
 <style>
@@ -249,15 +246,18 @@
     let lucroliquido =document.getElementById("lucroliquido")
     ;
 
+if(descricao.value=='' || quantidade.value<=0|| valorvenda.value<=0){
+  notifier.show('Preencha todos os campos!', 'Campos em vermeho ', 'warning', '/src/img/danger.png', 0);
+}
 
-    if(descricao.value==''){
-      alert("esse camp não pode ficar vazio")
+    if(descricao.value== ''){
+      descricao.className="border-1 border-r-0 rounded-l-lg bg-white border-blue-500  text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-400 focus:border-red-200n-500"
     } else
     if(quantidade.value<=0){
-      alert("esse camp não pode ficar vazio")
+     quantidade.className="border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500"
     }else
     if(valorvenda.value<=0){
-      alert("esse camp não pode ficar vazio")
+      valorvenda.className="border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200nblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500"
     } else{
 
     
@@ -266,7 +266,8 @@
     custototal+= parseFloat(valorcusto.value)
     estoquetotal+=parseFloat(quantidade.value)
     lucrobruto +=parseFloat(valorvenda.value)
-    lucroliq +=parseFloat((valorvenda.value)- (valorcusto.value))
+    lucroliq +=parseFloat((valorvenda.value)- (valorcusto.value));
+    
    descricao.removeAttribute('id');
    quantidade.removeAttribute('id');
     valorcusto.removeAttribute('id');
@@ -283,15 +284,16 @@
 
     
   }
-  descricao.className="border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-red-500 focus:border-red-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500";
-    quantidade.className="border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-red-500 focus:border-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500";
-    valorvenda.className="border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-red-500 focus:border-red-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500"
 }
-  function Inserir(){
-    let div= $("<tr><div class='flex rounded-l-lg inserir'><td><input type='text' id='descricao' class='border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-green-500 focus:border-green-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><input type='text' id='quantidade' class='border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required> </td><td><input type='text' id='valorcusto' class= 'border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><input type='text' id='valorvenda' class='border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-blue-greenblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><button onclick='Delete()' type='text' class='border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green500'><svg  class='w-6 h-5'id='Camada_1' data-name='Camada 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 18'><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class='cls-1' d='M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z' transform='translate(-4 -3)'/></svg></button></td><tr>")
+
+  
+    function Inserir(){
+    let div= $("<tr><div class='flex rounded-l-lg inserir'><td><input type='text' id='descricao' class='border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-green-500 focus:border-green-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><input type='number' min='1' id='quantidade' class='border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required> </td><td><input type='text' id='valorcusto' class= 'border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><input type='text' id='valorvenda' class='border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-green-500 focus:border-blue-greenblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500' placeholder='Ex: Body' required></td><td><button onclick='Delete()' type='text' class='border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green500'><svg  class='w-6 h-5'id='Camada_1' data-name='Camada 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 18'><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class='cls-1' d='M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z' transform='translate(-4 -3)'/></svg></button></td><tr>")
    $("tbody").append(div);};
    
-
+   descricao.className="border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-gray-300 focus:border-gray-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500";
+    quantidade.className="border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-red-500 focus:border-red-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500";
+    valorvenda.className="border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-red-500 focus:border-red-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500"
     ///Volta o input para cor normal
     
     
@@ -334,7 +336,7 @@
   
   //////////// INSERIR NOVO CAMPO
   function Inserir(){
-    let div= $("<tr><div class='flex rounded-l-lg inserir'><td><input type='text' id='descricao' class='border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-gray-400 focus:border-gray-200 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required></td><td><input type='text' id='quantidade' class='border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required> </td><td><input type='text' id='valorcusto' class= 'border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required></td><td><input type='text' id='valorvenda' class='border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200nblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required></td><td><button onclick='Delete()' type='text' class='border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n500'><svg  class='w-6 h-5'id='Camada_1' data-name='Camada 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 18'><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class='cls-1' d='M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z' transform='translate(-4 -3)'/></svg></button></td><tr>")
+    let div= $("<tr><div class='flex rounded-l-lg inserir'><td><input type='text' id='descricao' class='border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 text-sm rounded-l-lg focus:ring-gray-400 focus:border-gray-200 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required></td><td><input type='number' id='quantidade'  min='1' class='border-1 border-r-0 bg-white border-gray-300    text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required> </td><td><input type='text' id='valorcusto' disababled='disabled' class= 'border-1 border-r-0 bg-gray-100 border-gray-300  text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required></td><td><input type='text' id='valorvenda' class='border-1 border-r-0 bg-white border-gray-300  text-gray-900 text-sm  focus:ring-gray-400 focus:border-gray-200nblock w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500' placeholder='Ex: Body' required></td><td><button onclick='Delete()' type='text' class='border-1 rounded-r-lg bg-white border-gray-300  text-gray-900 text-sm rounded-r-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n500'><svg  class='w-6 h-5'id='Camada_1' data-name='Camada 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 18'><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class='cls-1' d='M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z' transform='translate(-4 -3)'/></svg></button></td><tr>")
    $("tbody").append(div);
   };
    

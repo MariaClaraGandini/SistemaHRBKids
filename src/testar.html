@@ -151,12 +151,20 @@
  <div id="div" class="ml-4 font-semibold">
   <a onclick="validar()" id="add-more" class="position color mb-5">+ Adicionar Item</a></div>
   <div class="flex">
-  <p>Valor total:</p>
+  <p>Valor Custo:</p>
   <div id="valorsacola"></div>
 </div>
 <div class="flex">
   <p>Quantidade:</p>
   <div id="quantidadetotal"></div>
+</div>
+<div class="flex">
+  <p>Lucro bruto:</p>
+  <div id="vendatotal"></div>
+</div>
+<div class="flex">
+  <p>Lucro liquido:</p>
+  <div id="lucroliquido"></div>
 </div>
 </form>
 <div>
@@ -228,6 +236,7 @@
   var custototal = 0;
   var estoquetotal=0;
   var lucrobruto = 0;
+  var lucroliq =0;
 
   function validar(){
     let descricao = document.getElementById("descricao");
@@ -237,6 +246,7 @@
     let valorsacola = document.getElementById("valorsacola");
     let quantidadetotal =document.getElementById("quantidadetotal")
     let vendatotal = document.getElementById("vendatotal")
+    let lucroliquido =document.getElementById("lucroliquido")
     ;
 
 
@@ -256,6 +266,7 @@
     custototal+= parseFloat(valorcusto.value)
     estoquetotal+=parseFloat(quantidade.value)
     lucrobruto +=parseFloat(valorvenda.value)
+    lucroliq +=parseFloat((valorvenda.value)- (valorcusto.value))
    descricao.removeAttribute('id');
    quantidade.removeAttribute('id');
     valorcusto.removeAttribute('id');
@@ -266,6 +277,8 @@
     console.log(custototal);
     valorsacola.innerHTML = custototal;
     quantidadetotal.innerHTML = estoquetotal;
+    vendatotal.innerHTML = lucrobruto;
+    lucroliquido.innerHTML =lucroliq;
     
 
     

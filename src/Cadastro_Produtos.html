@@ -103,67 +103,161 @@
     <div class="pl-4 pt-5 pr-4 grid gap-6 mb-6 md:grid-cols-3">
         <div>
             <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Descrição</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: Body" required>
+            <input type="text" id="descricao" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" required>
         </div>
         <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Código (SKU)</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: 0000000001" required>
+            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300"><div class="flex"><p class=" flex text-red-500">*</p>Código (SKU)</div></label>
+            <input type="text" id="codigo" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="Ex: 0000000001" required>
         </div>
         <div class="pr-2">
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Preço de Venda (R$)</label>
-            <input type="number" step="0.1"id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ex: 199,50" required>
+            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300"><div class="flex"><p class="text-red-500">*</p>Preço de Venda (R$)</div></label>
+            <input type="text" step="0.1" id="valorvenda" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="Ex: 199,50" required>
         </div>
     </div>
     <h2 class="flex pl-5  ml-5 text-xl text-gray-400">Estoque</h2>
-    <label class="block mb-2 pl-5 text-sm font-medium text-black dark:text-gray-300 mt-4">Estoque</label>
+    <label class="block mb-2 pl-5 text-sm font-medium text-black dark:text-gray-300 mt-4"><div class="flex"><p class=" flex text-red-500">*</p>Estoque</div></label>
       
     
-    <input type="number" step="1" class="block p-2.5 ml-4 input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Ex:1" required>
+    <input type="number" step="1" id="estoque" class="block p-2.5 ml-4 input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="Ex:1" required>
     <h2 class="flex pl-5 pt-5 text-xl text-gray-400">Dados Fiscais</h2>
     <div class="pl-5 pt-5 pr-5 grid gap-6 mb-6 md:grid-cols-3 mr-4">
                   <div >
                 <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Origem</label>
-                <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City Name" required>
-
+                <select id="origem" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200">
+                  <option value="0" selected>0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8</option>
+                  <option value="1">1 - Estrangeira - Importação direta, exceto a indicada no código 6</option>
+                  <option value="2">2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7</option>
+                  <option value="3">3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior ou igual a 70%</option>
+                  <option value="4">4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes</option>
+                  <option value="5">5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%</option>
+                  <option value="6">6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX</option>
+                  <option value ="7">7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante em lista da CAMEX</option>
+                  <option value="8">8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%</option>
+                  </select>
               </div>
             <div>
                 <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">NCM</label>
                 <div class="relative w-full">
-                  <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="CEP" required>
-                  <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-gray-900 rounded-r-lg  hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                  <input type="search" id="ncm" class="block p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="CEP" required>
+                  <button type="submit" disabled="true" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-gray-900 rounded-r-lg  focus:ring-4 focus:outline-none dark:bg-blue-600  dark:focus:ring-blue-800"><svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
             </div>
             </div>
                 <div>
                 <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">CEST</label>
-                <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City Name" required>
+                <input type="text" id="cest" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="City Name" required>
             </div>
-        <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Rua</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Street Name" required>
-        </div>
-        <div >
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Número</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="1234" required>
-        </div>
-
-        <div>
-            <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300">Bairro</label>
-            <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="District Name" required>
-        </div>
-
-        <div class="flex pt-5">
-          <button class=" flex-wrap block mb-2 mt-1 mr-3 p-2.5 z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
-
-          <button class="">Cadastrar</button>
-      </div>
-    </div>
+            <div class="flex pt-5">
+              <button class=" ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200  block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg  border border border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:bg-green-700 mr-1">Cancelar</button>
+    
+              <button onclick="validar()" id="btn-nt-show" type="submit" class=" flex-wrap block cadastrarbotao 0 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
+          </div>
     </div>
 </form>
 </div>
+<script>
+  const nome= document.getElementById("nome")
+        const descricao= document.getElementById("descricao")
+        const valorvenda= document.getElementById("valorvenda")
+        const estoque= document.getElementById("estoque")
+        const ncm= document.getElementById("ncm")
+        const cest= document.getElementById("cest")
+
+       
+
+
+function validar(){
+if(descricao.value=='' || valorvenda.value<=0|| estoque.value<=0 || ncm.value==''|| cest.value=='' ){
+  notifier.show('Preencha todos os campos!', 'Campos em vermelho estão vazios', 'warning', '/src/img/danger.png', 0);
+}
+
+
+if(descricao.value=='') {
+  descricao.className="border-1 border-r-0 rounded-l-lg bg-white border-gray-300  text-gray-900 rounded-l-lg focus:ring-gray-400 focus:border-gray-400 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200 ";
+  
+          
+} 
+if(valorvenda.value=='') {
+  nome.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+    
+} 
+if(email.value=='') {
+  email.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  email.focus()
+  
+          
+}
+if(telefone.value=='') {
+  telefone.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  telefone.focus()
+  
+          
+}
+ if(celular.value=='') {
+  celular.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  celular.focus()
+          
+}
+
+if(cep.value=='') {
+  cep.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  cep.focus()
+          
+}
+
+ if(uf.value=='') {
+  uf.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  uf.focus()
+  
+          
+}
+ if(cidade.value=='') {
+  cidade.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  cidade.focus()
+          
+}
+if(rua.value=='') {
+  rua.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  rua.focus()
+  
+          
+}
+if(numero.value=='') {
+  numero.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  numero.focus()
+          
+} 
+if(bairro.value=='') {
+  bairro.className="negative bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:b-gray-2lue-500 ";
+  bairro.focus()
+  
+          
+} 
+  }
+</script>
 <style>
   .input{
     width:31%;
   }
+  .cadastrarbotao{
+      width:13em;
+      margin-top: 2%;
+      background-color: #0bde97;
+      color: white;
+      
+    }
+    .cadastrarbotao:hover{
+      background-color: #0bc889;
+    }
+
+.cancelarbotao{
+  width:13em;
+  margin-top: 2%;
+}
+
+.negative{
+    border-color: red;
+  border: 10%;
+}
 </style>
 </body>
 </html>

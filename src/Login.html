@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <script src="dist/simple-notify.min.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
+    <title>HRB Kids | Login </title>
+</head>
+<body class="bg-gray-50 dark:bg-gray-800 ">
+    <div class="h-screen flex justify-center items-center  ">
+        <div class="tamanhodiv -5 bg-white shadow-md rounded px-8 pb-8 mb-4">
+            <h1 class="text-3xl mb font-bold text-center text-gray-700">Login</h1>
+            <form>
+            <div class="mb-4">
+              <label class="mt-3 block text-gray-700 text-sm font-bold mb-2" for="email">
+                E-mail
+              </label>
+              <input type="email" id="email" class="shadow border-1 border-gray-300 focus:border-gray-400 focus:ring-gray-300 rounded-lg w-full py-2 px-3 text-gray-700"  placeholder="ciclano@fulano.com">
+            </div>
+            <div class="mb-6">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Password
+              </label>
+              <input  type="password" id="password" class="shadow border-1 border-gray-300 focus:ring-gray-300 focus:border-gray-400 rounded-lg w-full py-2 px-3 text-gray-700 mb-3" id="password" type="password" placeholder="************">
+            </div> 
+            <button class="rounded  w-full p-3" onclick="validar()">Entrar</button>
+        </form>
+    </div>
+      <style>
+        .tamanhodiv{
+          width: 50%;
+          padding-right: 5%;
+          padding-left: 5%;
+          padding-top: 5%;
+          padding-bottom: 5%;
+        }
+        button{
+          
+      margin-top: 2%;
+      background-color: #0bde97;
+      color: white;
+     }
+   
+      </style>
+      <script>
+        function validar(){
+          const email = document.getElementById("email")
+          const password = document.getElementById("password")
+
+          email.className=""
+
+          if(email.value==''){
+  // notifier.show('Preencha o campo de E-mail!', 'Campo em vermelho precisa ser preenchidos ', 'warning', '/src/img/danger.png', 0);
+  email.className="negative shadow border-1 border-red-500 focus:border-red-500 focus:ring-red-500 rounded-lg w-full py-2 px-3 text-gray-700"
+  email.focus();
+} if(password.value==''){
+  password.className="negative shadow border-1 border-red-500 focus:border-red-500 focus:ring-red-500 rounded-lg w-full py-2 px-3 text-gray-700"
+}
+}
+        
+      </script>
+      <style>
+        .negative{
+    border-color: red;
+  border: 10%;
+}
+      </style>
+</body>
+</html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -22,7 +21,7 @@
       <div class="flex flex-wrap w-full  h-15 justify-between tamanho">
         <div class="flex ml-4 tirarmargin">
         <a href="/src/home.html" class="flex items-start">
-          <img src="/src/log.png" class="  mr-3 mt-1 h-12 w-12" alt="HRB Kids Logo" />
+          <img src="/src/log.png" class="  mr-3 mt-1 h-12 w-12 logo" alt="HRB Kids Logo" />
       </a>
   
       <!-- escolha do idioma -->
@@ -49,7 +48,7 @@
       </div>
     </div>
   </div>
-    <div class="ml-5 relative tirarmargin">
+    <div class="ml-5 relative margintop">
     <div class="flex md:order-2 tirarmargin mt-2 mr-2  md:font-medium">
       <button id="theme-toggle" type="button" class="mr-4 tirarmargin text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg  p-2.5">
         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -177,8 +176,8 @@
 <div>
  
 <div class="flex flex-wrap ml-3 ">
-<button class="ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200  block  mb-2 p-2.5 w-full z-20  text-gray-900  rounded-lg  border border border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:bg-green-700">Cancelar</button>
-<button onclick="validar()" class="ml-1 mt-5 cadastrarbotao block  mb-2 p-2.5 w-full z-20  text-gray-900  rounded-lg   border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotaodark">Cadastrar</button>
+<button class="ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200 mr-4  block  mb-2 p-2.5 w-full z-20  text-gray-900  rounded-lg  border  border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:bg-green-700">Cancelar</button>
+<button onclick="validar()" class="ml-1 mt-5 cadastrarbotao block mr-4  mb-2 p-2.5 w-full z-20  text-gray-900  rounded-lg   border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotaodark">Cadastrar</button>
 </div>
 </div>
 <style>
@@ -200,7 +199,7 @@
 
  
   .cadastrarbotao{
-      width:13em;
+    
       margin-top: 2%;
       background-color: #0bde97;
       color: white;
@@ -218,16 +217,13 @@
         padding:0rem;
         margin:20%
       }
-
-      .tirarmargin{
-       margin:0rem;
-      }
-      
     }
- 
 
-    
-
+@media (max-width:767px){
+  .idiomatext{
+    display: none;
+  }
+}
 @media(min-width:768px){
   nav{
     width:85%
@@ -240,10 +236,16 @@
   table{
     width:80%;
   }
+   .cadastrarbotao{
+      width:13em;
+      margin-right: 0.5%;
+   }
   .cancelarbotao{
   width:13em;
   margin-top: 2%;
+  margin-right: 0.5%;
 }
+
 
 .borda:focus{
   border-color:gray;
@@ -263,13 +265,9 @@
     color:white;
   }
 }
-@media (max-width:360px){
+@media (max-width:399px){
   .tamanho{
     flex-wrap: nowrap;
-  }
-
-  .idiomatext{
-    display: none;
   }
 }
 

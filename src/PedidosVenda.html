@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/path/to/cdn/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 
     <title>HRB Kids | Login </title>
 </head>
 <body>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 6 margin m-5 shadow">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 6 margin m-5 shadow containertodo">
 
       <div >
         <div  class="bg-white p-3">
@@ -52,7 +54,7 @@
     </div>
     </div>
     <div class="flex pt-5 mt-4">
-      <button id="btn-nt-show" type="submit" class=" flex-wrap block cadastrarbotao 0 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Inserir</button>
+      <button id="btn-nt-show" onclick="Inserirproduto()" type="submit" class=" flex-wrap block cadastrarbotao colorbutton 0 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Inserir</button>
     </div>
     </div>
  
@@ -68,18 +70,78 @@
     <input type="text" step="0.1" id="valorvenda" class=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="Ex: 199,50" required>
   </div>
   </div>
-  <div class="flex pt-5 mt-4">
-    <button onclick="validar()" id="btn-nt-show" type="submit" class=" flex-wrap block cadastrarbotao 0 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Inserir</button>
-  </div>
   </div>
 </div>
 </div>
-    <div class="bg-white border-l-2 col">2
-      <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, dolorem accusamus optio ex delectus atque quasi tempora sequi deserunt nam distinctio obcaecati quos reiciendis quae ea quia mollitia voluptatum inventore!</p>
+    <div class="bg-white lado2  pt-4 col">
+      <div class="p-4 pl-1 thead bg-gray-50 flex justify-between w-1/6 font-semibold p-4 sombra">
+        <div class="tamanhodiv ">Produtos</div>
+        <div class="tamanhodiv text-center">Quantidade</div>
+        <div class="tamanhodiv text-center">Preço</div>
+        <div class="tamanhodiv text-center">Ações</div>
+
+      </div>
+      <div class=" pedidovenda sombra">
+        <div class="ml-1 p-3 pedidoproduto flex justify-between ">
+        <div class=" nomeproduto">
+          <p class="">Nome Produto</p>
+          <p class="text-sm">000000000</p></div>
+        <div class="tamanhodiv ml-3">1,00</div>
+        <div class="tamanhodiv text-center mr-5">R$14,90
+        </div>
+        <div class="flex tamanhodiv pl-3">
+        <div><button class="" type="button" data-modal-toggle="authentication-modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+          </svg>
+        </button>
+        
+        <!-- Main modal -->
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="py-6 px-6 lg:px-8">
+                        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">VESTIDO HENECY</h3>
+                        <form class="space-y-6" action="#">
+                          <div class="flex">
+                            <div class="mr-2">
+                                <label for="text" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-gray-300">Quantidade</label>
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com">
+                            </div>
+                            <div class="ml-2">
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Valor unitário</label>
+                                <input type="password" name="password" id="password" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            </div>
+                          </div>
+                            <button type="submit" class="w-full colorbutton p-2 rounded-lg ">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+          </svg> -->
+        </button></div>
+        <div><button onclick="Delete()" class="px-3">
+          <svg  class="w-4 h-4"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>
+        </button></div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="sombra bg-white border w-full  p-4"> TESTE</div>
     </div>
+
   </div>
 </div>
   <style>
+    
     .pagamentovenda{
       display: none;
     }
@@ -104,19 +166,48 @@
       color:white
     }
     #pagamentobotao{
-      background-color:#ced0cf;
+      background-color:#f4f4f4;
     }
 
    .cadastrarbotao{
       width:13em;
       margin-top: 2%;
-      background-color: #0bde97;
-      color: white;
       
     }
-    .cadastrarbotao:hover{
+    .colorbutton{
+      background-color: #0bde97;
+      color: white;
+    }
+    .colorbuton:hover{
       background-color: #0bc889;
     }
+    .sombra{
+    box-shadow: 0px 0px 0.9px rgb(174, 174, 174)
+   }
+   .tamanhodiv{
+    width:5rem;
+   }
+  @media (max-width:824px){
+    .containertodo{
+      display: block;
+    }
+  }
+    @media (min-width:798px){
+    .lado2{
+      width: 90%px;
+      overflow-y: auto;
+      border-left-width: 2px ;
+    }
+    /* .sombra{
+    box-shadow: 1px 0px 2px rgb(211, 211, 211)
+   } */
+   }
+    .lado2 h1{
+      padding-left: 2%;
+      margin-top: 4%;
+      margin-bottom: 4%;
+    }
+   
   </style>
   <script>
     var pagamentovenda= document.getElementById("pagamentovenda");
@@ -130,7 +221,7 @@
     produtovenda.style.display="block";
     produtobotao.style.backgroundColor="#0bde97";
     produtobotao.style.color="white";
-    pagamentobotao.style.backgroundColor="#ced0cf";
+    pagamentobotao.style.backgroundColor="#f4f4f4";
     pagamentobotao.style.color="black";
 
 }
@@ -141,9 +232,18 @@
       pagamentovenda.style.display="block";
       pagamentobotao.style.backgroundColor="#0bde97";
       pagamentobotao.style.color="#FFFF";
-      produtobotao.style.backgroundColor="#ced0cf";
+      produtobotao.style.backgroundColor="#f4f4f4";
       produtobotao.style.color="black";
+
     }
-  
+    function Inserirproduto(){
+      let div= $("<div class='p-5 bg-gray-100'><div class='pedidoproduto flex justify-between'><div>Código Produto</div><div class='flex'><div>R$14,90</div><div><a>Editar</a></div><div>Delete</div></div></div></div>")
+   $(".pedidovenda").append(div);
+    }
+    function validar(){
+      Inserirproduto();
+
+    }
+   
   </script>
 </body>

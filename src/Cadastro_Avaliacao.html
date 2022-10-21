@@ -176,7 +176,7 @@
 <div>
  
 <div class="flex flex-wrap ml-3 ">
-<button class="ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200 mr-4  block  mb-2 p-2.5 w-full z-20  text-gray-900  rounded-lg  border  border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:bg-green-700">Cancelar</button>
+<button class="cancelarbotao bg-white hover:bg-gray-100  mr-4  block  mb-2 p-2.5 w-full z-20  text-gray-500  rounded-lg  border  border-gray-200 hover:text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-300 dark:hover:text-white">Cancelar</button>
 <button onclick="validar()" class="ml-1 mt-5 cadastrarbotao block mr-4  mb-2 p-2.5 w-full z-20  text-gray-900  rounded-lg   border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:cadastrarbotaodark">Cadastrar</button>
 </div>
 </div>
@@ -314,7 +314,7 @@ if(descricao.value=='' || quantidade.value<=0|| valorvenda.value<=0){
     custototal+= parseFloat(valorcusto.value)
     estoquetotal+=parseFloat(quantidade.value)
     lucrobruto +=parseFloat(valorvenda.value)
-    lucroliq +=parseFloat((valorvenda.value)- (valorcusto.value));
+    lucroliq +=parseFloat((valorvenda.value)- (valorcusto.value))
     
    descricao.removeAttribute('id');
    quantidade.removeAttribute('id');

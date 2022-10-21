@@ -1,0 +1,81 @@
+.color{
+    color:#0bde97;
+  }
+  a:hover{
+    color:#0bc889;
+  }
+ 
+
+ 
+  .cadastrarbotao{
+    
+      margin-top: 2%;
+      background-color: #0bde97;
+      color: white;
+      
+    }
+    .cadastrarbotao:hover{
+      background-color: #0bc889;
+    }
+    
+
+
+    
+    @media (max-width:431px){
+      .optionsnav{
+        padding:0rem;
+        margin:20%
+      }
+    }
+
+@media (max-width:767px){
+  .idiomatext{
+    display: none;
+  }
+}
+@media(min-width:768px){
+  nav{
+    width:85%
+  }
+  body{
+    width: 100%;
+    display:block;
+   }
+    
+  table{
+    width:80%;
+  }
+   .cadastrarbotao{
+      width:13em;
+      margin-right: 0.5%;
+   }
+  .cancelarbotao{
+  width:13em;
+  margin-top: 2%;
+  margin-right: 0.5%;
+}
+
+
+.borda:focus{
+  border-color:gray;
+}
+.padding{
+  padding-top:0.70rem;
+}
+.login{
+    background-color: #0bde97;
+    margin-top: -7%;
+    
+  }
+  .login:hover{
+    background-color: #0bc889;
+  }
+  .login a{
+    color:white;
+  }
+}
+@media (max-width:399px){
+  .tamanho{
+    flex-wrap: nowrap;
+  }
+}

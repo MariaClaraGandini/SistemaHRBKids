@@ -7,10 +7,14 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <link rel="stylesheet" href="/src/notifier.css">
+    <script src="/src/moda.js"></script>
 
     <title>HRB Kids | Login </title>
 </head>
 <body class="bg-gray-50">
+  <script src="/src/notifier.js"></script>
+
   <div class="grid grid-cols-1 sm:grid-cols-2  6 margin m-5 shadow containertodo">
 
       <div >
@@ -27,10 +31,10 @@
           </div>
       <div id="produtovenda" class="col">
       <h1 class="mt-4 text text-2xl font-semibold">Pedido de Venda</h1>
-      <div class="pt-5 flex">
+      <div class="pt-5 flex flex-wrap">
         <div class="w-full  mr-3">
             <label class="mb-2  block font-medium text-black dark:text-gray-300">Nome do Cliente</label>
-            <input type="text" id="nome" class=" w-full bg-white border border-gray-300 text-gray-900  rounded-lg focus:ring-gray-300 focus:border-gray-200 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="Ciclano da Silva">
+            <input type="text" id="nome" class=" w-full bg-white border border-gray-300 text-gray-900  rounded-lg focus:ring-gray-300 focus:border-gray-200 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 focus:border-gray-200n-500" placeholder="Ciclano da Silva">
         </div>
         
       </div>
@@ -44,7 +48,7 @@
     <div class="flex">
     <div class="w-1/2 mr-1">
     <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300 mt-4">Quantidade</label>
-    <input type="number" step="1" id="quantidade" class=" w-full block p-2.5  input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="Ex:1" required>
+    <input type="number"  value="1" min="1" id="quantidade" class=" w-full block p-2.5  input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="Ex:1" required>
   </div>
   <div class="ml-1 mr-3 w-1/2">
     <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300 mt-4 ">Preço de Venda (R$)</label>
@@ -61,14 +65,25 @@
   <div class="flex">
   <div class="w-1/2 mr-1">
   <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300 mt-4">Sub total </label>
-  <input type="number" id="subtotal" class=" w-full block p-2  input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="Ex:1" required>
+  <input  id="subtotal" class=" w-full block p-2  input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="Ex:1" required>
 </div>
 <div class="ml-1 mr-3 w-1/2">
   <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300 mt-4 ">Valor do Crédito</label>
-    <input type="number" step="0.1" id="valorcredito" class=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="Ex: 199,50" required>
+    <input    id="valorcredito" class=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="Ex: 199,50" required>
   </div>
   
   </div>
+  <div class="flex">
+    <div class="w-1/2 mr-1">
+    <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300 mt-4">Saldo</label>
+    <input disabled="disabled" id="saldo" class=" bg-gray-100 w-full block p-2  input z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-gray-200" placeholder="">
+  </div>
+  <div class="ml-1 mr-3 w-1/2">
+    <label class="block mb-2 text-sm font-medium text-black dark:text-gray-300 mt-4 ">Valor do Crédito</label>
+      <input type="number"   id="valorcredito" class=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-400 focus:border-gray-200 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-400 dark:focus:border-gray-200" placeholder="Ex: 199,50" required>
+    </div>
+    
+    </div>
   </div>
 </div>
 </div>
@@ -87,7 +102,7 @@
           
           <tr class="shadow-sm">
             <td class="p-4 ">Body</td>
-            <td class="p-4">1,00</td>
+            <td class="p-4 texto">1,00</td>
             <td class="p-4">14,90</td>
             <td>
               <button type="button" data-modal-toggle="authentication-modal">
@@ -118,7 +133,7 @@
                           <div class="flex">
                             <div class="mr-2">
                                 <label class="block mb-2 text-sm  font-medium text-gray-900 dark:text-gray-300">Quantidade</label>
-                                <input type="number" step="1" id="editarquntidade" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com">
+                                <input type="text" name="quantidadeformatacao" step="1" min="1" id="editarquntidade" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com">
                             </div>
                             <div class="ml-2">
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Valor unitário</label>
@@ -132,13 +147,7 @@
             </div>
         </div> 
         </button></div>
-        <!-- <div><button onclick="Delete()" class="px-3">
-          <svg  class="w-4 h-4"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>
-        </button></div> --> 
-      <!-- </div>
-      </div>
-      </div>
-      </div> -->
+        
       <div class="sombra bg-white border w-full valortotal">
         <div class="flex  flex-wrap justify-between items-center	">
         <div class="flex  ml-3 ">
@@ -147,7 +156,7 @@
           </div>
           <div class="flex">
             <p class="text-2xl mr-3 mt-2 ">Total</p>
-            <p  id="saldo" class="text-4xl mb-4 mr-4 items-center font-semibold">0,00</p>
+            <p  id="totalp" class="text-4xl mb-4 mr-4 items-center font-semibold">0,00</p>
           </div>
         </div>
       </div>
@@ -156,12 +165,14 @@
   </div>
 </div>
   <script>
+    
 
+  
     var pagamentovenda= document.getElementById("pagamentovenda");
     var produtovenda= document.getElementById("produtovenda");
     var pagamentobotao =document.getElementById("pagamentobotao");
     var produtobotao= document.getElementById("produtobotao");
-
+     
     function Produto(){
 
      if (window.matchMedia("(min-width: 768px)").matches){
@@ -202,83 +213,144 @@
         let modal = document.createElement("div")
         modal.innerHTML = texto
        }
-      function Inserirproduto(codigoProduto,produto, quantidade,valorvenda,total){
 
-        let novaLinhaTR = document.createElement("tr")
-        novaLinhaTR.classList.add("shadow-sm")
-        novaLinhaTR.classList.add("p-4")
-        novaLinhaTR.id= codigoProduto;
+       var subtotal= 0;
+       function Inserirproduto(codigoProduto,produto, quantidade,valorvenda,valortotal){
 
-        let produtotabela = document.createElement("td")
-        produtotabela.innerHTML = produto.value;
-        produtotabela.classList.add("p-4")
+let novaLinhaTR = document.createElement("tr")
+novaLinhaTR.classList.add("shadow-sm")
+novaLinhaTR.classList.add("p-4")
+novaLinhaTR.id= codigoProduto;
 
-        let quantidadetabela = document.createElement("td")
-        quantidadetabela.innerHTML = quantidade.value;
-        quantidadetabela.classList.add("p-4")
+let produtotabela = document.createElement("td")
+produtotabela.innerHTML = produto.value;
+produtotabela.classList.add("p-4")
 
-
-        let valorvendatabela= document.createElement("td")
-        valorvendatabela.innerHTML= (valorvenda.value)*(quantidade.value);
-        valorvendatabela.classList.add("p-4")
-        valorvendatabela.id="valorsaldo"
-        
+let quantidadetabela = document.createElement("td")
+quantidadetabela.innerHTML = quantidade.value ;
+quantidadetabela.classList.add("p-4","qtdmargin")
 
 
-        let acoes = document.createElement("td")
-        valorvendatabela.TextContent = valortotal;
+let valorvendatabela= document.createElement("td")
+var valorvendaformatado = parseFloat(valorvenda.value.replace(",","."))
+var calculo = valorvendaformatado * quantidade.value
 
-        
-
-        acoes.append(GerarBotoes("<button type='button' data-modal-toggle='authentication-modal'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class=' w-5 h-5'><path stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125' /></svg><button",["bg-white"]))
-        acoes.append(GerarBotoes('<svg  class="w-4 h-4"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>',["px-3", "mb-2s"]))
-        novaLinhaTR.append(produtotabela, quantidadetabela,valorvendatabela, acoes )
+valorvendatabela.innerHTML= calculo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+valorvendatabela.classList.add("p-4")
+valorvendatabela.id="valortotalp"
 
 
-        let tabela = document.getElementById("tabelaProdutosEmTable")
-        tabela.append(novaLinhaTR)
-      //let div= $('<div class="ml-1 p-3 pedidoproduto flex justify-between items-center"><div><p id="nomeproduto"></p></div>')
-      //'<div class="tamanhodiv ml-3" id="quantidadeproduto"></div><div class="tamanhodiv text-center mr-5" id="valorvendaproduto" ></div><div class="flex tamanhodiv pl-3"><div><button type="button" data-modal-toggle="authentication-modal"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"/></svg></button><!-- Main modal --><div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"><div class="relative p-4 w-full max-w-md h-full md:h-auto"><!-- Modal content --><div class="relative bg-white rounded-lg shadow dark:bg-gray-700"><button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="uthentication-modal"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg><span class="sr-only">Close modal</span></button><div class="py-6 px-6 lg:px-8"><h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white uppercase" id="nomeproduto"></h3><form class="space-y-6" action="#"><div class="flex"><div class="mr-2"<label class="block mb-2 text-sfont-medium text-gray-900 dark:text-gray-300">Quantidade</label><input type="number"step="1" id="editarquantidade" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></div><div class="ml-2"><label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Valor unitário</label><input type="number" id="valorunitario" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></div></div><button type="submit" class="w-full colorbutton p-2 rounded-lg">Salvar</button></form></div></div></div></div> </button></div><div><button onclick="Delete()" class="px-3"><svg class="w-4 h-4" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg></button></div></div></div>");
-     
-      let novaDiv = document.createElement("div");
-      novaDiv.classList.add("ml-1", "p-3", "pedidoproduto","border-red-500", "flex", "justify-between", "items-center")
-      let novoP = document.createElement("p")
-      novoP.id = codigoProduto;
-      novoP.innerHTML = "<h1>teste</h1>"
-      novaDiv.append(novoP)
-      
-      novoP.append(document.createElement("i"))
 
-       saldo= document.getElementById("saldo")
-     
-       var valorvenda= document.getElementById=("valorvenda")
-      var quantidade = document.getElementById("quantidade")
-      var total=0;
-       total += valorvenda.value * quantidade.value;
-      saldo.innerHTML= total;
-     
+let acoes = document.createElement("td")
+valorvendatabela.TextContent = valortotal;
+
+
+
+acoes.append(GerarBotoes("<button type='button' data-modal-toggle='authentication-modal'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class=' w-5 h-5'><path stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125' /></svg><button",["bg-white"]))
+acoes.append(GerarBotoes('<svg  class="w-4 h-4"id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg>',["px-3", "mb-2s"]))
+novaLinhaTR.append(produtotabela, quantidadetabela,valorvendatabela, acoes )
+
+
+let tabela = document.getElementById("tabelaProdutosEmTable")
+tabela.append(novaLinhaTR)
+//let div= $('<div class="ml-1 p-3 pedidoproduto flex justify-between items-center"><div><p id="nomeproduto"></p></div>')
+//'<div class="tamanhodiv ml-3" id="quantidadeproduto"></div><div class="tamanhodiv text-center mr-5" id="valorvendaproduto" ></div><div class="flex tamanhodiv pl-3"><div><button type="button" data-modal-toggle="authentication-modal"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"/></svg></button><!-- Main modal --><div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"><div class="relative p-4 w-full max-w-md h-full md:h-auto"><!-- Modal content --><div class="relative bg-white rounded-lg shadow dark:bg-gray-700"><button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="uthentication-modal"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg><span class="sr-only">Close modal</span></button><div class="py-6 px-6 lg:px-8"><h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white uppercase" id="nomeproduto"></h3><form class="space-y-6" action="#"><div class="flex"><div class="mr-2"<label class="block mb-2 text-sfont-medium text-gray-900 dark:text-gray-300">Quantidade</label><input type="number"step="1" id="editarquantidade" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></div><div class="ml-2"><label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Valor unitário</label><input type="number" id="valorunitario" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-200 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></div></div><button type="submit" class="w-full colorbutton p-2 rounded-lg">Salvar</button></form></div></div></div></div> </button></div><div><button onclick="Delete()" class="px-3"><svg class="w-4 h-4" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18"><defs><style>.cls-1{fill:#ed2121;}</style></defs><title>trash</title><path class="cls-1" d="M9,3V4H4V6H5V19a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V6h1V4H15V3H9M7,6H17V19H7V6M9,8v9h2V8H9m4,0v9h2V8Z" transform="translate(-4 -3)"/></svg></button></div></div></div>");
+
+let novaDiv = document.createElement("div");
+novaDiv.classList.add("ml-1", "p-3", "pedidoproduto","border-red-500", "flex", "justify-between", "items-center")
+let novoP = document.createElement("p")
+novoP.id = codigoProduto;
+novoP.innerHTML = "<h1>teste</h1>"
+novaDiv.append(novoP)
+
+novoP.append(document.createElement("i"))
+
+
+subtotalinput= document.getElementById("subtotal")
+valorvenda=document.getElementById("valorvenda");
+quantidade = document.getElementById("quantidade");
+subtotal += (valorvendaformatado * quantidade.value);
+totalformatado = subtotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+subtotalinput.value= totalformatado;
+
+var valorcredito = document.getElementById("valorcredito").value;
+var saldo = document.getElementById("saldo");
+var total =  Math.abs(subtotal - valorcredito)
+
+
+if(valorcredito<subtotal){
+var totalp = document.getElementById("totalp");
+
+totalformatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+totalp.innerHTML= totalformatado
+
+
+}
+
+else if(subtotal = total){
+  var zero = 0
+
+  saldo.value= zero.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+  totalp.innerHTML= zero.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+}
+else{
   
-        }
+totalformatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+saldo.value= totalformatado;
+
+
+}
+
+}
+
         
       
     function validar(){
-      // var nome = document.getElementById("nome");
-      // var produto = document.getElementById("produto");
-      // var quantidade = document.getElementById("quantidade");
-      // var valorvenda = document.querySelector("#valorvenda");
-      // var subtotal = document.getElementById("subtotal");
-      // var valorcredito = document.getElementById("valorcredito");
-      // var saldo = document.getElementById("saldo");
+      var nome = document.getElementById("nome");
+      var produto = document.getElementById("produto");
+      var quantidade = document.getElementById("quantidade");
+      var valorvenda = document.querySelector("#valorvenda");
+      var subtotal = document.getElementById("subtotal");
+      var valorcredito = document.getElementById("valorcredito");
+      var totalp = document.getElementById("totalp");
 
       
 
       
-        Inserirproduto(Math.random()*2,produto, quantidade,valorvenda,total)
-       
+
+        if(nome.value==''){
+          nome.className="w-full p-2 bg-white border border-red-500 text-gray-900  rounded-lg focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 focus:border-red-500";
+          notifier.show('Preencha o nome do cliente!', 'por favor, preencha o campo em vermelho!', 'warning', '/src/img/danger.png', 5000);
+
+        }
+        if (produto.value==''){
+          produto.className="block p-2.5 w-1/2 w-full z-20 text-sm text-gray-900  rounded-lg border border-red-500 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:border-red-500";
+          notifier.show('Preencha o campo produto!', 'por favor, preencha o campo em vermelho', 'warning', '/src/img/danger.png', 5000);
+
+        }
+
+        if (valorcredito.value==''){
+          valorcredito.className=" bg-white border border-red-500 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+          notifier.show('Preencha o valor do crédito!', 'por favor, preencha o campo em vermelho na aba Pagamentos', 'warning', '/src/img/danger.png', 5000);
+
+        }
+        Inserirproduto(Math.random()*2,produto, quantidade,valorvenda)
+        
+
     }
+  
+    Total(total,quantidade,valorcredito,valorvenda,valorvenda);{
       
+      var totalp = document.getElementById("totalp");
+      var valorcredito = document.getElementById("valorcredito").value;
+      var valorvenda = document.querySelector("#valorvenda").value;
+
+
+
+
+    }
  
-    
   </script>
   <style>
    
@@ -309,7 +381,9 @@
     #pagamentobotao{
       background-color:#f4f4f4;
     }
-
+    .qtdmargin{
+padding-left:9%;
+ }
    .cadastrarbotao{
       width:13em;
       margin-top: 2%;

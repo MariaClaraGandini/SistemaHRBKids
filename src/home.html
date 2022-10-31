@@ -462,3 +462,467 @@ themeToggleBtn.addEventListener('click', function() {
 </script>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      Tailwind Starter Template - Landing Page Template: Tailwind Toolbox
+    </title>
+    <meta name="description" content="Simple landind page" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+    <script src="mododark.js"></script>
+    <link rel="stylesheet" href="nav.css">
+  </head>
+  <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!--Nav-->
+    
+     
+    <nav class="bg-white border-gray-300 dark:bg-gray-900 w-full">
+        <div class="flex flex-wrap w-full  h-15 justify-between tamanho">
+          <div class="flex ml-4 tirarmargin">
+          <a href="/src/home.html" class="flex items-start">
+            <img src="/src/log.png" class="  mr-3 mt-1 h-12 w-12 logo" alt="HRB Kids Logo" />
+        </a>
+    
+        <!-- escolha do idioma -->
+  
+        <!-- TELAS -->
+        <div class="navcontainer">
+        <div class="hidden  navbarmobile w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul class="flex flex-col p-4 mt-4 optionsnav rounded-lg md:flex-row md:space-x-8 md:mt-0  md:font-medium md:border-0">
+            <li>
+              <a href="/src/Produtos.html" id="Produtos" class="block py-2 pr-4 pl-3 text-gray-700 rounded 0 md:hover:bg-transparent  md:p-0 dark:text-gray-400 md:dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Produtos</a>
+            </li>
+            <li>
+              <a href="/src/Clientes.html" id="Clientes" class="block py-2 pr-4 pl-3 text-gray-700 rounded  md:hover:bg-transparent  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Clientes</a>
+            </li>
+            <li>
+              <a href="/src/Avaliacao.html" id="Avaliacao" class="block py-2 pr-4 pl-3 text-gray-700 rounded  md:hover:bg-transparent md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Avaliação</a>
+            </li>
+            <li>
+              <button class="login rounded-lg pl-3 p-1 pr-3">
+                <a href="/src/Clientes.html" id="login" class="block text-gray-700 md:text-white dark:text-gray-400 md:dark:text-white  rounded md:p-0 ">Entrar</a>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <div class="ml-5 relative margintop">
+      <div class="flex md:order-2 tirarmargin mt-2 mr-2  md:font-medium">
+        <button id="theme-toggle" type="button" class="mr-4 tirarmargin text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg  p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+      <p class="idiomatext mt-1 dark:text-gray-400">Idioma:</p>
+        <button type="button" data-dropdown-toggle="language-dropdown-menu" class="font-semibold inline-flex justify-center idioma p-2  text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          <img class="w-5 h-5 rounded-full " aria-hidden="true" src="/src/img/bandeira-do-brasil.png"/>
+        </button>
+        <button type="button" data-dropdown-toggle="language-dropdown-menu" class="font-semibold inline-flex justify-center idioma p-2  text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          <img class=" w-5 h-5 rounded-full " aria-hidden="true" src="/src/img/bandeira-eua.png"/>
+        </button>
+        <div class="flex md:order-2">
+          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2  text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+     
+  </div>
+  </div>
+      </nav>
+  
+    <style>
+    .gradient {
+      background: linear-gradient(90deg, #0bc889 0%, #8af8d4 100%);
+    }
+  </style>
+    <!--Hero-->
+    <div class="pt-8 div">
+      <div class=" pl-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <!--Left Col-->
+        <div class="flex flex-col width md:w-2/5 justify-center items-start text-center md:text-left">
+          <p class="uppercase tracking-loose w-full">What business are you?</p>
+          <h1 class="my-4 text-5xl font-bold leading-tight">
+            Sistema ERP Brechozinho
+          </h1>
+          <p class="leading-normal text-2xl mb-8">
+            Cadastre clientes, produtos e automatize o processo de avaliação! 
+          </p>
+          <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            Entrar
+          </button>
+        </div>
+        <!--Right Col-->
+        <div class="img1 md:w-3/5 text-center">
+          <img class="img" src="/src/img/girl.png" />
+        </div>
+      </div>
+    </div>
+    <section class="bg-white border-b py-8">
+      <div class="container max-w-5xl mx-auto m-8">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Sistema de Gestão
+        </h2>
+        <div class="w-full mb-4 mt-5">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-5/6 sm:w-1/2 md:py-24	p-6">
+            <h3 class="text-3xl text-gray-800 md:px-8 font-bold leading-none mt-4 mb-3">
+              Solução Personalizada
+            </h3>
+            <p class="text-gray-600 md:px-8 ">
+             Software desenvolvido pensando em todas as necessidades do brechozinho! Cadastre clientes, produtos, avaliações e gerencie o valor do Crédito gerado!
+              <br />
+              <br/>
+            </p>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 items-center	">
+            <img src="/src/img/avaliacoes.svg">
+           
+          </div>
+        </div>
+        <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+          <div class="w-full sm:w-1/2  mt-6">
+            <img src="/src/img/avaliar.svg">
+
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                Praticidade
+              </h3>
+              <p class="text-gray-600 mb-8">
+                Chega de planilhas confusas! Agora com nosso sistema todas as informações necessárias do brechozinho ficam em um
+                único lugar, com muita praticidade, organização e eficiência!
+                <br />
+                <br />
+                Images from:
+
+                <a class="text-pink-500 underline" href="https://undraw.co/">undraw.co</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white border-b py-8">
+      <div class="container containerwidth mx-auto flex flex-wrap pt-4 pb-12">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Acesso rápido
+        </h2>
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+              <div class=" text-center w-full mt-5 font-bold text-xl text-gray-800 px-6">
+                Clientes
+              </div>
+              <p class=" text-center text-gray-800 text-base px-6 mb-5 mt-3">
+                Consulte/cadastre clientes em nosso sistema! Através desse cadastro fica muito fácil entrar em contato com o cliente               </p>
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow ">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Clique aqui
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                xGETTING STARTED
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Avaliação
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Consulte/cadastre avaliações! Tenha total controle sobre a sacola, tenha acesso a informações como lucro líquido e valor do crédito gerado!
+              </p>
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Action
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                xGETTING STARTED
+              </p>
+              <div class="w-full font-bold text-xl text-gray-800 px-6">
+                Lorem ipsum dolor sit amet.
+              </div>
+              <p class="text-gray-800 text-base px-6 mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              </p>
+            </a>
+          </div>
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow ">
+            <div class="flex items-center justify-center">
+              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Action
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Change the colour #f8fafc to match the previous section colour -->
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+          <g class="wave" fill="#f8fafc">
+            <path
+              d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"
+            ></path>
+          </g>
+          <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+            <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+              <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+              <path
+                d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                opacity="0.100000001"
+              ></path>
+              <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <section class="container mx-auto text-center py-6 mb-12">
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
+        Call to Action
+      </h2>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <h3 class="my-4 text-3xl leading-tight">
+        Main Hero Message to sell yourself!
+      </h3>
+      <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        Action!
+      </button>
+    </section>
+    <!--Footer-->
+   
+    <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+    <style>
+      .gradient {
+        background: linear-gradient(90deg, #0bc889 0%, #8af8d4 100%);
+      }
+ .img1{
+    margin-top: 0;
+  margin-top: 5%;}
+
+.div{
+      width: 80%;
+      margin-left: 6%;
+
+    }
+    /* .containerwidth{
+      width: 80%;
+      height: 60%;
+    } */
+   @media (max-width:767px){
+    .div{
+      text-align: center;
+    }
+    .img1{
+    margin-top: 0;
+  text-align: center;}
+
+ .img{
+  width: 90%;
+  margin-left:6%;
+ }
+
+   }
+   @media (max-width:1190px){
+    .div{
+      height: 75%;
+      width: 90%;
+    }
+    .img1{
+      margin-top:5%
+    }
+   }
+    @media (min-width:1200px){
+      .div{
+        width: 60%;
+        margin-left: 15%;
+      }
+      .img{
+        margin-left: 20%;
+      }
+    }
+ 
+     
+      
+    </style>
+    <style>
+  
+        table{
+          margin-top:2%;
+        }
+        th{
+          text-align:start;
+          margin-left: 7%;
+        }
+        .color{
+          color:#0bde97;
+        }
+        a:hover{
+          color:#0bc889;
+        }
+       
+      
+       
+        .cadastrarbotao{
+          
+            margin-top: 2%;
+            background-color: #0bde97;
+            color: white;
+            
+          }
+          .cadastrarbotao:hover{
+            background-color: #0bc889;
+          }
+          
+      
+      
+          
+          @media (max-width:431px){
+            .optionsnav{
+              padding:0rem;
+              margin:20%
+            }
+          }
+      
+      @media (max-width:767px){
+        .idiomatext{
+          display: none;
+        }
+      }
+      @media(min-width:768px){
+        nav{
+          width:85%
+        }
+        body{
+          width: 100%;
+          display:block;
+         }
+          
+        table{
+          width:80%;
+        }
+         .cadastrarbotao{
+            width:13em;
+            margin-right: 0.5%;
+         }
+        .cancelarbotao{
+        width:13em;
+        margin-top: 2%;
+        margin-right: 0.5%;
+      }
+      
+      
+      .borda:focus{
+        border-color:gray;
+      }
+      .padding{
+        padding-top:0.70rem;
+      }
+      .login{
+          background-color: #0bde97;
+          margin-top: -7%;
+          
+        }
+        .login:hover{
+          background-color: #0bc889;
+        }
+        .login a{
+          color:white;
+        }
+      }
+      @media (max-width:399px){
+        .tamanho{
+          flex-wrap: nowrap;
+        }
+      }
+      </style>
+      <script>
+////////////////
+//TEMA DARK
+// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+   document.documentElement.classList.add('dark');
+} else {
+   document.documentElement.classList.remove('dark')
+}
+
+var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+//Change the icons inside the button based on previous settings
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+ themeToggleLightIcon.classList.remove('hidden');
+} else {
+ themeToggleDarkIcon.classList.remove('hidden');
+}
+
+var themeToggleBtn = document.getElementById('theme-toggle');
+
+themeToggleBtn.addEventListener('click', function() {
+
+ // toggle icons inside button
+ themeToggleDarkIcon.classList.toggle('hidden');
+ themeToggleLightIcon.classList.toggle('hidden');
+
+ // if set via local storage previously
+ if (localStorage.getItem('color-theme')) {
+     if (localStorage.getItem('color-theme') === 'light') {
+         document.documentElement.classList.add('dark');
+         localStorage.setItem('color-theme', 'dark');
+     } else {
+         document.documentElement.classList.remove('dark');
+         localStorage.setItem('color-theme', 'light');
+     }
+
+ // if NOT set via local storage previously
+ } else {
+     if (document.documentElement.classList.contains('dark')) {
+         document.documentElement.classList.remove('dark');
+         localStorage.setItem('color-theme', 'light');
+     } else {
+         document.documentElement.classList.add('dark');
+         localStorage.setItem('color-theme', 'dark');
+     }
+ }
+})
+</script>
+  </body>
+</html>

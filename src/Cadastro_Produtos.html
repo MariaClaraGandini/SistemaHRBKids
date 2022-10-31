@@ -7,26 +7,16 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+        <link rel="stylesheet" href="/src/notifier.css">
+
     <link rel="stylesheet" href="/src/notifier.css">
 
 
     <title>HRB Kids | Cadastro </title>
 </head>
 <body class="bg-gray-50	">
-  c
+  <script src="/src/notifier.js"></script>
 
-    <!-- NAVBAR 
-
-    <nav class="bg-white border-gray-300 px-2 sm:px-4  rounded dark:bg-gray-900">
-      <div class="flex flex-wrap w-full ml-4 h-15 justify-between tamanho">
-        <div class="flex">
-        <a href="https://flowbite.com/" class="flex items-start">
-          <img src="/src/log.png" class="mr-3 h-12 w-12" alt="Flowbite Logo" />
-      </a>
-  
-      <!-- escolha do idioma -->
-
-      <!-- TELAS -->
       <div class="hidden  w-full md:flex md:w-auto md:order-1" id="mobile-menu-language-select">
         <ul class="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
           <li>
@@ -91,7 +81,7 @@
       </li>
     </ol>
 </div>
-
+<div class="w-full bg-gray-50">
 <div class="bg-white m-5">
   <div class="flex justify-between items-end responsividade">
   <h1 class="flex pl-4 pt-5 text-4xl font-semibold ">Produto</h1>
@@ -146,11 +136,12 @@
             <div class="flex pt-5">
               <button class=" ml-1 mt-5 cancelarbotao bg-transparent hover:bg-green-200  block  mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg  border border border-green-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:hover:bg-green-700 mr-1">Cancelar</button>
     
-              <button onclick="validar()" id="btn-nt-show" type="submit" class=" flex-wrap block cadastrarbotao 0 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
+              <button onclick="validar()" id="btn-nt-show" type="button" class=" flex-wrap block cadastrarbotao 0 mt-1 mb-2 p-2.5 w-full z-20 text-sm text-gray-900  rounded-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-gray-400 focus:border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">Cadastrar</button>
           </div>
     </div>
 </form>
 </div>
+
 <script>
       const descricao= document.getElementById("descricao")
         const codigo = document.getElementById("codigo")
@@ -163,17 +154,15 @@
 
 
 function validar(){
-if(descricao.value=='' || codigo.value=='' || valorvenda.value<=0|| estoque.value<=0 || ncm.value==''|| cest.value=='' ){
-  notifier.show('Preencha todos os campos!', 'Campos em vermelho precisam ser preenchidos', 'warning', '/src/img/danger.png', 0);
-}
+
 if(descricao.value=='') {
-  descricao.className="bg-white border border-r-2 border-red-500 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500";
+  descricao.className="bg-white border  border-red-500 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500";
   
           
 } 
 
 if(codigo.value=='') {
-  codigo.className="bg-white border border-r-2 border-red-500 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500";
+  codigo.className="bg-white border  border-red-500 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500";
   
           
 } 
@@ -191,13 +180,17 @@ if(ncm.value=='') {
   
           
 }
-else {
-    
-    notifier.show('Produto Cadastrado com sucesso!', '', 'success', '/src/check-mark-img.png', 0);
+if(descricao.value=='' || codigo.value=='' || valorvenda.value<=0|| estoque.value<=0 || ncm.value==''|| cest.value=='' ){
+  notifier.show('Preencha todos os campos!', 'Campos em vermelho precisam ser preenchidos', 'warning', '/src/img/danger.png', 0);
 }
- 
+else {
+  notifier.show('Produto Cadastrado com sucesso!', '', 'success', '/src/check-mark-img.png', 5000);
+  setTimeout(redirecionar, 4000)
+}
+}
+  function redirecionar(){
+  window.location="./index.html";
   }
-  
 </script>
 <style>
   .input{

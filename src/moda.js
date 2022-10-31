@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="/path/to/cdn/jquery.min.js"></script>
-    <title>HRB Kids | Cadastro </title>
-
-  <title>Document</title>
-</head>
-<body class="w-full h-32">
-  <button onclick="olamodal()"class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="popup-modal">
-    Toggle modal
-  </button>
-  
-
-  
-
- 
-  <script>
-      var quantidade = document.getElementById("quantidade")
+var quantidade = document.getElementById("quantidade")
 var precovenda = document.getElementById("precovenda")
-    function Inserir(){
+    function InserirModal(){
 
 
 var divcontainer = document.createElement("div");
@@ -174,7 +149,7 @@ var precovenda = document.getElementById("precovenda")
       modal.remove();
 
 }
-function validar(){
+function validarmodal(){
   var quantidadeupdate = document.getElementById("quantidadeupdate").value
   var precovendaupdate = document.getElementById("precovendaupdate").value
   divinput1 = document.querySelector("#divinput1");
@@ -200,28 +175,7 @@ else{
 }
 
 function olamodal(){
-  Inserir()
+  InserirModal()
 
 }
-    
- </script>
-
-  <style>
-    #popup-modal{
-      width: 100%;
-      background-color: blue;
-    }
-    .cadastrarbotao{
-       background-color: #0bde97;
-    color: white;
-    
-  }
-  .cadastrarbotao:hover{
-    background-color: #0bc889;
-  }
-  .tamanhobotao{
-    width: 5.75rem;
-  }
-  </style>
-</body>
-</html>
+export default function() {InserirModal(), FecharModal(),validarmodal(), olamodal()}// também class, function*
